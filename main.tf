@@ -42,7 +42,10 @@ module "ec2_instance" {
   version = "4.0.0"
   count   = 1
 
-  name = "my-ec2-raju"
+  name = var.NAME
+  create_spot_instance = true
+  spot_type            = var.spot_type
+  spot_instance_interruption_behavior = var.spot_behavior
 
   ami                    = var.ami
 #  ami                  = var.ami
