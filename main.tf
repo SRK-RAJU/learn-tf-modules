@@ -10,7 +10,7 @@ provider "aws" {
 
 
 module "vpc" {
- source  = "terraform-aws-modules/vpc/aws"
+ source  = "../terraform-aws-modules/vpc/aws"
 #  source = "../../"
   version = "3.16.0"
 
@@ -28,7 +28,7 @@ module "vpc" {
 
 module "ec2_instance" {
 # source  = "../../"
-  source  = "terraform-aws-modules/ec2_instance/aws"
+  source  = "../terraform-aws-modules/ec2_instance/aws"
 #  source  = "terraform-aws-modules/vpc/aws"
   version = "3.16.0"
   count   = 2
