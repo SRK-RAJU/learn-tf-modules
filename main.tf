@@ -8,6 +8,15 @@ provider "aws" {
   }
 }
 
+resource "aws_eip" "nat" {
+  count = 1
+  vpc   = true
+  tags  = {
+    name = raju-nat
+  }
+}
+
+
 
 module "vpc" {
  source  = "terraform-aws-modules/vpc/aws"
@@ -31,18 +40,22 @@ module "ec2_instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 #  source  = "terraform-aws-modules/vpc/aws"
   version = "4.0.0"
-  count   = 2
+  count   = 1
 
-  name = "my-ec2-cluster"
+  name = "my-ec2-raju"
 
-  ami                    = "ami-05fa00d4c63e32376"
-  instance_type          = "t2.micro"
+  ami                    = var.ami
+  instance_type          = var.instance_type
+  monitoring             = true
+  key_name               = var.NAME
+#  key_name=
   vpc_security_group_ids = [module.vpc.default_security_group_id]
 #  subnet_id="${module.vpc.public_subnets}"
   subnet_id = module.vpc.public_subnets[0]
 #  subnet_id              = [module.vpc.public_subnets]
   tags = {
     Terraform   = "true"
-    Environmet = "dev"
+    Environmet = "dev-raj"
   }
 }
+
