@@ -12,7 +12,7 @@ resource "aws_eip" "nat" {
   count = 1
   vpc   = true
   tags  = {
-    name = raju-nat
+    name = var.NAME
   }
 }
 
