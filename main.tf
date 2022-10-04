@@ -12,7 +12,7 @@ provider "aws" {
 module "vpc" {
  source  = "terraform-aws-modules/vpc/aws"
 #  source = "../../"
-  version = "3.14.0"
+  version = "0.0"
 
   name = var.vpc_name
   cidr = var.vpc_cidr
@@ -26,7 +26,7 @@ module "vpc" {
   tags = var.vpc_tags
 }
 
-module "ec2_instances" {
+module "ec2_instance" {
 # source  = "../../"
   source  = "terraform-aws-modules/ec2_instance/aws"
 #  source  = "terraform-aws-modules/vpc/aws"
