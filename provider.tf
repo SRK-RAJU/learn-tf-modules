@@ -16,6 +16,7 @@
 #  }
 #  required_version = ">= 1.1.0"
 #}
+
 terraform {
   required_providers {
     aws = {
@@ -24,3 +25,13 @@ terraform {
     }
   }
 }
+provider "aws" {
+  region = "us-east-1"
+
+  default_tags {
+    tags = {
+      hashicorp-learn = "module-use-raju"
+    }
+  }
+}
+
