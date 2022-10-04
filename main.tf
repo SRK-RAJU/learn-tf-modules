@@ -12,7 +12,7 @@ provider "aws" {
 module "vpc" {
  source  = "terraform-aws-modules/vpc/aws"
 #  source = "../../"
-  version = "0.0"
+  version = "3.16.0"
 
   name = var.vpc_name
   cidr = var.vpc_cidr
@@ -43,6 +43,6 @@ module "ec2_instance" {
 #  subnet_id              = [module.vpc.public_subnets]
   tags = {
     Terraform   = "true"
-    Environment = "dev"
+    Environmet = "dev"
   }
 }
