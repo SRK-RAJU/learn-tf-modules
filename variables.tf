@@ -47,6 +47,11 @@ variable "ami" {
   type        = string
   default     = ""
 }
+#variable "instance_type" {
+#  description = "The type of instance to start"
+#  type        = string
+#  default     = "t3.micro"
+#}
 variable"instance_type"{}
 variable "NAME" {}
 variable "generated-key" {
