@@ -42,7 +42,11 @@ variable "vpc_tags" {
     Environment = "dev"
   }
 }
-variable "ami" {}
+variable "ami" {
+  description = "ID of AMI to use for the instance"
+  type        = string
+  default     = ""
+}
 variable"instance_type"{}
 variable "NAME" {}
 variable "generated-key" {

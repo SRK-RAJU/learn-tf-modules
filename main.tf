@@ -45,6 +45,7 @@ module "ec2_instance" {
   name = "my-ec2-raju"
 
   ami                    = var.ami
+  ami                  = var.ami
   instance_type          = var.instance_type
   monitoring             = true
   key_name               = var.NAME
