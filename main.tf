@@ -30,7 +30,7 @@ module "ec2_instance" {
 # source  = "../../"
   source  = "terraform-aws-modules/ec2-instance/aws"
 #  source  = "terraform-aws-modules/vpc/aws"
-  version = "4.1.4"
+  version = "4.0.0"
   count   = 2
 
   name = "my-ec2-cluster"
